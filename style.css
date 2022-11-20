@@ -1,0 +1,10 @@
+body {
+    color: orangered;
+}
+.header, .hw {
+    text-align: center;
+    font-size: 30px;
+}
+.hw1 {
+    font-size: 20px;
+}

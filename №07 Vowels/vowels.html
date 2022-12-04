@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vowels</title>
+    <script>
+        let text = prompt('Введите строку');
+        function vowels(str) {
+            let letters = 'уеёыаоэяиюУЕЁЫАОЭЯИЮ';
+            let count = 0;
+            for(let i = 0; i < str.length; i++) {
+                if (letters.indexOf(str[i]) !== -1) {
+                count += 1;
+                }
+            }
+            alert(count);    
+        }
+        vowels(text);
+    </script>
+</head>
+<body>
+    <h1>Vowels</h1> 
+</body>
+</html>

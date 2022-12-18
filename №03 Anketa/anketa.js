@@ -1,13 +1,13 @@
 // Фамилия
-let surname = FullName(false, 'Укажите Вашу фамилию!', 'Введите фамилию', 'Фамилия должна состоять из букв!');
+let surname = getFullInfo(false, 'Укажите Вашу фамилию!', 'Введите фамилию', 'Фамилия должна состоять из букв!');
 // Имя
-let name = FullName(false, 'Укажите Ваше имя!', 'Введите имя', 'Имя должно состоять из букв!');
+let name = getFullInfo(false, 'Укажите Ваше имя!', 'Введите имя', 'Имя должно состоять из букв!');
 // Отчество
-let dadname = FullName(false, 'Укажите Ваше отчество!', 'Введите отчество', 'Отчество должно состоять из букв!');
+let dadname = getFullInfo(false, 'Укажите Ваше отчество!', 'Введите отчество', 'Отчество должно состоять из букв!');
 // Возраст
-let age = FullName(true, 'Укажите Ваш возраст!', 'Введите возраст', 'Возраст должен состоять из цифр!');
+let age = getFullInfo(true, 'Укажите Ваш возраст!', 'Введите возраст', 'Возраст должен состоять из цифр!');
 
-function FullName(isInt, input, standart, help) {
+function getFullInfo(isInt, input, standart, help) {
   let myRegExp;
   if (isInt == true) {
     myRegExp = /[0-9]+$/;

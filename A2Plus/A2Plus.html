@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A2Plus</title>
+</head>
+<body>
+    <script>
+        function deleteSpace() {
+            let str = prompt('Введите строку');
+            for(let i = 0; i < str.length; i++) {
+                if(str.startsWith(' ')) {
+                    str = str.substring(1);
+                }
+                if(str.endsWith(' ')) {
+                    str = str.substring(0, str.length-1);
+                }
+            }
+            alert('*' + str + '*');
+        }
+        deleteSpace();
+    </script>
+</body>
+</html>

@@ -1,16 +1,19 @@
 body {
     background: rgba(50, 54, 57, 0.85);
     font-family: Roboto, 'Segoe UI', Tahoma, sans-serif;
+    margin: 0px;
 }
 .header {
     color: red;
     text-align: center;
     font-size: 35px;
+    opacity: 0.8;
 }
 h2 {
     color: red;
     text-align: center;
     font-size: 30px;
+    opacity: 0.8;
 }
 ul {
     font-size: 25px;
@@ -19,11 +22,15 @@ ul {
     margin-bottom: 30px;
 }
 a {
-    color: purple;
+    color: white;
     text-decoration: none;
 }
 li {
     list-style-type: none;
-    color: red;
     margin: 5px;
+    padding: 3px;
+}
+.check {
+    color: green;
+    font-size: 23px;
 }

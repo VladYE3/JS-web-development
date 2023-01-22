@@ -1,16 +1,29 @@
 body {
-    color: #e34208;
-    background-color: rgb(77 84 90);
+    background: rgba(50, 54, 57, 0.85);
+    font-family: Roboto, 'Segoe UI', Tahoma, sans-serif;
 }
 .header {
+    color: red;
     text-align: center;
     font-size: 35px;
 }
-.hw {
+h2 {
+    color: red;
     text-align: center;
     font-size: 30px;
 }
-.lessons {
-    font-size: 20px;
-    color: purple
+ul {
+    font-size: 25px;
+    margin-left: -35px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+a {
+    color: purple;
+    text-decoration: none;
+}
+li {
+    list-style-type: none;
+    color: red;
+    margin: 5px;
 }

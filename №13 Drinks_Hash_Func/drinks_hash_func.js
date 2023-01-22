@@ -38,13 +38,13 @@ document.getElementById('getInfo').onclick = function () {
 Напиток Алкогольный: ${drinkAlcohol} 
 Рецепт приготовления: ${drinkComposition}`
         );
-    } else alert(`Напиток ${drinkName} не найден`);
+    } else alert(`Напиток "${drinkName}" не найден`);
 }
 document.getElementById('del').onclick = function () {
     const drinkName = prompt('Введите название напитка');
     if (drinkStorage.deleteValue(drinkName))
-        alert(`Информация о напитке ${drinkName} удалена`);
-    else alert(`Напиток ${drinkName} не найден`);
+        alert(`Информация о напитке "${drinkName}" удалена`);
+    else alert(`Напиток "${drinkName}" не найден`);
 }
 document.getElementById('getList').onclick = function () {
     alert(`Имеется информация о напитках: ${drinkStorage.getKeys()}`);

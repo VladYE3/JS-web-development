@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vowels_Arr</title>
+</head>
+<body>
+    <h1 style="text-align: center; color: red;">Vowels_Arr</h1>
+    <script>
+        const strArr = prompt('Введите строку').toLowerCase().split('');
+        const vowels = 'уеёыаоэяию';
+        const _forEach = strArr => {
+            let count = 0;
+            strArr.forEach(element => {
+            if (vowels.includes(element)) 
+                count++;
+            })
+            return count;
+        }
+        const _filter = strArr => {
+            strArr = strArr.filter(element => vowels.includes(element))
+            return strArr.length;
+        }
+        const _reduce = strArr =>
+            strArr.reduce((count, element) => {
+            if (vowels.includes(element))
+                count++; 
+            return count;
+            }, 0);
+
+        alert(`Гласных букв: 
+        forEach: ${_forEach(strArr)}
+        filter: ${_filter(strArr)}  
+        reduce: ${_reduce(strArr)}`);
+    </script>
+</body>
+</html>

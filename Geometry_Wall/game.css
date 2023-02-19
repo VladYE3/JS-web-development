@@ -1,0 +1,81 @@
+body {
+    background-image: url(img/5.jpg);
+    overflow: hidden;
+}
+#floor {
+    height: 26vh;
+    width: 100vw;
+    position: absolute;
+    left: 0vw;
+    bottom: 0vh;
+    background-image: url(img/3.jpg);
+}
+#sphere {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 50px;
+    left: 900px;
+}
+#spike {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    bottom: 26vh;
+    left: 180vmin;
+    animation: spikeMov 0.8s infinite linear;
+}
+@keyframes spikeMov {
+    0% {
+        left: 180vmin;
+    }
+    100% {
+        left: -20px;
+    }
+}
+#cube {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    bottom: 26vh;
+    left: 10vmin;
+}
+.jump {
+    animation: jump 0.3s linear;
+}
+@keyframes jump {
+    0% {
+        bottom: 30vh;
+    }
+    30% {
+        bottom: 50vh;
+    }
+    50% {
+        bottom: 90vh;
+    }
+    80% {
+        bottom: 50vh;
+    }
+    100% {
+        bottom: 30vh;
+    }
+}
+#score {
+    height: auto;
+    width: auto;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: yellow;
+    font-size: 30px;
+}
+#gameOver {
+    display: none;
+    font-size: 70px;
+    position: absolute;
+    left: calc(50% - 181px);
+    top: calc(50% - 40px);
+    width: 362px;
+    height: 80px;
+    color: orangered;
+}

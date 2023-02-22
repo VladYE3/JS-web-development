@@ -1,77 +1,3 @@
-body {
-    overflow: hidden;
-}
-#floor {
-    height: 31vh;
-    width: 100vw;
-    position: absolute;
-    left: 0vw;
-    bottom: 0vh;
-    background-image: url(img/3.jpg);
-}
-#spike {
-    height: 12vh;
-    width: 12vw;
-    position: absolute;
-    bottom: 31vh;
-    left: 160vmin;
-    animation: spikeMov 0.8s infinite linear;
-}
-@keyframes spikeMov {
-    0% {
-        left: 160vmin;
-    }
-    100% {
-        left: -30vmin;
-    }
-}
-#cube {
-    height: 12vh;
-    width: 12vw;
-    position: absolute;
-    bottom: 31vh;
-    left: 5vmin;
-}
-.jump {
-    animation: jump 0.3s linear;
-}
-@keyframes jump {
-    0% {
-        bottom: 31vh;
-    }
-    30% {
-        bottom: 50vh;
-    }
-    50% {
-        bottom: 90vh;
-    }
-    80% {
-        bottom: 50vh;
-    }
-    100% {
-        bottom: 31vh;
-    }
-}
-#score {
-    height: auto;
-    width: auto;
-    color: gold;
-    font-size: 5vh;
-    font-family: monospace;
-    margin: 3vh;
-}
-#gameOver {
-    display: none;
-    font-size: 10vh;
-    position: absolute;
-    left: 40vw;
-    top: 40vh;
-    width: 30vw;
-    height: 80px;
-    color: orangered;
-    font-family: fantasy;
-}
-
 /* Background space */
 body,
 html {
@@ -80,14 +6,12 @@ html {
   height: 100%;
   background: radial-gradient(ellipse at center, rgba(8, 25, 42, 1) 19%, rgba(1, 4, 6, 1) 100%);
 }
-
 #root {
   position: absolute;
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
-
 #root>div {
   position: absolute;
   background: radial-gradient(ellipse at center, rgba(177, 198, 219, 1) 2%, rgba(5, 63, 118, 1) 100%);
@@ -95,7 +19,6 @@ html {
   /* filter:blur(1px); */
   animation: shine infinite alternate;
 }
-
 @keyframes shine {
   0% {
     transform: scale(1);
@@ -125,4 +48,208 @@ html {
     transform: scale(.9);
     opacity: .9;
   }
+}
+/* Moon Ground */
+#floor {
+    height: 31vh;
+    width: 100vw;
+    position: absolute;
+    left: 0vw;
+    bottom: 0vh;
+    background-image: url(img/3.jpg);
+    display: block;
+}
+/* Name of the game */
+#name {
+  display: none;
+  justify-content: center;
+  color: gold;
+  font-size: 15vh;
+  font-weight: bold;
+  font-family: Courier;
+}
+/* Buttons in menu */
+#play {
+  display: none;
+  justify-content: center;
+  font-size: 10vh;
+  width: 17vw;
+}
+#sound {
+  display: none;
+  justify-content: center;
+  font-size: 10vh;
+  width: 30vw;
+}
+#exit {
+  display: none;
+  justify-content: center;
+  font-size: 10vh;
+  width: 17vw;
+}
+.menu-but {
+  font-family: consolas;
+  display: none;
+  justify-content: center;
+  margin: 1vh;
+}
+a {
+  position: relative;
+  display: none;
+  color: #00ff00;
+  text-transform: uppercase;
+  letter-spacing: 0.3vw;
+  text-decoration: none;
+  overflow: hidden;
+  transition: 0.2s;
+}
+a:hover {
+  color: #000000;
+  background: #00ff00;
+  box-shadow: 0 0 10px #00ff00, 0 0 40px #00ff00, 0 0 80px #00ff00;
+  transition-delay: 1s;
+}
+a span {
+  position: absolute;
+  display: block;
+}
+a span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 0.3vw;
+  background: linear-gradient(90deg,transparent,#00ff00);
+} 
+a:hover span:nth-child(1) {
+  left: 100%;
+  transition: 1s;
+}
+a span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 0.3vw;
+  background: linear-gradient(270deg,transparent,#00ff00);
+} 
+a:hover span:nth-child(3) {
+  right: 100%;
+  transition: 1s;
+  transition-delay: 0.5s;
+}
+a span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 0.3vw;
+  height: 100%;
+  background: linear-gradient(180deg,transparent,#00ff00);
+} 
+a:hover span:nth-child(2) {
+  top: 100%;
+  transition: 1s;
+  transition-delay: 0.25s;
+}
+a span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 0.3vw;
+  height: 100%;
+  background: linear-gradient(360deg,transparent,#00ff00);
+} 
+a:hover span:nth-child(4) {
+  bottom: 100%;
+  transition: 1s;
+  transition-delay: 0.75s;
+}
+/* Spike */
+#spike {
+    height: 12vh;
+    width: 12vw;
+    position: absolute;
+    bottom: 31vh;
+    left: 160vmin;
+    animation: spikeMov 0.8s infinite linear;
+    display: block;
+}
+@keyframes spikeMov {
+    0% {
+        left: 160vmin;
+    }
+    100% {
+        left: -30vmin;
+    }
+}
+/* Cube */
+#cube {
+    height: 12vh;
+    width: 12vw;
+    position: absolute;
+    bottom: 31vh;
+    left: 5vmin;
+    display: block;
+}
+.jump {
+    animation: jump 0.3s linear;
+}
+@keyframes jump {
+    0% {
+        bottom: 31vh;
+    }
+    10% {
+      bottom: 40vh;
+    }
+    20% {
+      bottom: 50vh;
+    }
+    30% {
+        bottom: 60vh;
+    }
+    40% {
+      bottom: 70vh;
+    }
+    50% {
+        bottom: 80vh;
+    }
+    60% {
+      bottom: 70vh;
+    }
+    70% {
+      bottom: 60vh;
+    }
+    80% {
+        bottom: 50vh;
+    }
+    90% {
+      bottom: 40vh;
+    }
+    100% {
+        bottom: 31vh;
+    }
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(180deg);
+    }
+}
+/* Score */
+#score {
+    height: auto;
+    width: auto;
+    color: gold;
+    font-size: 5vh;
+    font-family: monospace;
+    margin: 3vh;
+    display: block;
+}
+/* Game Over */
+#gameOver {
+    display: none;
+    font-size: 10vh;
+    position: absolute;
+    left: 40vw;
+    top: 40vh;
+    width: 30vw;
+    height: 80px;
+    color: orangered;
+    font-family: fantasy; 
 }

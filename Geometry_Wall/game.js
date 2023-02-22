@@ -67,7 +67,6 @@ const params = {
   const randomBetween = (a, b) => {
     return (a + (Math.random() * (b - a)));
   }
-  
   for (let i = 0; i < params.amount; i++) {
     let star = $("<div></div>");
     let size = Math.round(Math.random() * 10) === 0 ? params.size.giant : randomBetween(params.size.min, params.size.max);
@@ -79,6 +78,5 @@ const params = {
       "box-shadow": "0 0 " + size + "px " + size / 2 + "px #043668",
       "animation-duration": randomBetween(params.duration.min, params.duration.max) + "s"
     });
-  
     $("#root").append(star);
   }

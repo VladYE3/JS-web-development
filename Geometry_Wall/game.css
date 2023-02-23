@@ -1,6 +1,7 @@
 /* Background space */
 body,
 html {
+  overflow: hidden;
   margin: 0;
   width: 100%;
   height: 100%;
@@ -57,11 +58,11 @@ html {
     left: 0vw;
     bottom: 0vh;
     background-image: url(img/3.jpg);
-    display: block;
+    display: none;
 }
 /* Name of the game */
 #name {
-  display: none;
+  display: flex;
   justify-content: center;
   color: gold;
   font-size: 15vh;
@@ -70,26 +71,26 @@ html {
 }
 /* Buttons in menu */
 #play {
-  display: none;
+  display: flex;
   justify-content: center;
   font-size: 10vh;
   width: 17vw;
 }
 #sound {
-  display: none;
+  display: flex;
   justify-content: center;
   font-size: 10vh;
   width: 30vw;
 }
 #exit {
-  display: none;
+  display: flex;
   justify-content: center;
   font-size: 10vh;
   width: 17vw;
 }
 .menu-but {
   font-family: consolas;
-  display: none;
+  display: flex;
   justify-content: center;
   margin: 1vh;
 }
@@ -167,8 +168,8 @@ a:hover span:nth-child(4) {
     position: absolute;
     bottom: 31vh;
     left: 160vmin;
-    animation: spikeMov 0.8s infinite linear;
-    display: block;
+    animation: none;
+    display: none;
 }
 @keyframes spikeMov {
     0% {
@@ -185,7 +186,7 @@ a:hover span:nth-child(4) {
     position: absolute;
     bottom: 31vh;
     left: 5vmin;
-    display: block;
+    display: none;
 }
 .jump {
     animation: jump 0.3s linear;
@@ -239,7 +240,16 @@ a:hover span:nth-child(4) {
     font-size: 5vh;
     font-family: monospace;
     margin: 3vh;
-    display: block;
+    display: none;
+
+}
+/* Counter */
+#count {
+  font-size: 13vh;
+  color: red;
+  display: none;
+  justify-content: center;
+  padding-top: 25vh;
 }
 /* Game Over */
 #gameOver {

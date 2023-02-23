@@ -17,7 +17,6 @@ html {
   position: absolute;
   background: radial-gradient(ellipse at center, rgba(177, 198, 219, 1) 2%, rgba(5, 63, 118, 1) 100%);
   border-radius: 100%;
-  /* filter:blur(1px); */
   animation: shine infinite alternate;
 }
 @keyframes shine {
@@ -245,8 +244,9 @@ a:hover span:nth-child(4) {
 }
 /* Counter */
 #count {
+  font-family: consolas;
   font-size: 13vh;
-  color: red;
+  color: #c20bc2;
   display: none;
   justify-content: center;
   padding-top: 25vh;
@@ -262,4 +262,44 @@ a:hover span:nth-child(4) {
     height: 80px;
     color: orangered;
     font-family: fantasy; 
+}
+/* Retry */
+#retry {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: absolute;
+  width: 12vh;
+  height: 12vh;
+  top: 54vh;
+  left: 43vw;
+  cursor: pointer;
+  transition: transform 0.5s;
+  filter: invert(1);
+}
+#retry:hover {
+  transform: scale(1.2);
+}
+#home {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: absolute;
+  width: 12vh;
+  height: 12vh;
+  top: 53.5vh;
+  left: 54vw;
+  cursor: pointer;
+  transition: transform 0.5s;
+  filter: invert(1);
+
+}
+#home:hover {
+  transform: scale(1.2);
+}
+#homeDiv {
+  display: none;
+}
+#retryDiv {
+  display: none;
 }

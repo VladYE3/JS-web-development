@@ -98,6 +98,10 @@ document.addEventListener('keydown', function(event) {
 
 });
 
+document.addEventListener('click', function(event) {
+    jump();
+});
+
 // Add Jump
 
 function jump() {

@@ -1,305 +1,741 @@
 /* Background space */
+
 body,
 html {
+
   overflow: hidden;
+  
   margin: 0;
+  
   width: 100%;
+  
   height: 100%;
+  
   background: radial-gradient(ellipse at center, rgba(8, 25, 42, 1) 19%, rgba(1, 4, 6, 1) 100%);
-}
-#root {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-#root>div {
-  position: absolute;
-  background: radial-gradient(ellipse at center, rgba(177, 198, 219, 1) 2%, rgba(5, 63, 118, 1) 100%);
-  border-radius: 100%;
-  animation: shine infinite alternate;
-}
-@keyframes shine {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  20% {
-    transform: scale(.9);
-    opacity: .8;
-  }
-  40% {
-    transform: scale(1);
-    opacity: .9;
-  }
-  40% {
-    transform: scale(.2);
-    opacity: .2;
-  }
-  60% {
-    transform: scale(.2);
-    opacity: .1;
-  }
-  80% {
-    transform: scale(.5);
-    opacity: .5;
-  }
-  100% {
-    transform: scale(.9);
-    opacity: .9;
-  }
-}
-/* Moon Ground */
-#floor {
-    height: 31vh;
-    width: 100vw;
-    position: absolute;
-    left: 0vw;
-    bottom: 0vh;
-    background-image: url(img/3.jpg);
-    display: none;
-}
-/* Name of the game */
-#name {
-  display: flex;
-  justify-content: center;
-  color: gold;
-  font-size: 15vh;
-  font-weight: bold;
-  font-family: Courier;
-}
-/* Buttons in menu */
-#play {
-  display: flex;
-  justify-content: center;
-  font-size: 10vh;
-  width: 17vw;
-}
-#sound {
-  display: flex;
-  justify-content: center;
-  font-size: 10vh;
-  width: 30vw;
-}
-#exit {
-  display: flex;
-  justify-content: center;
-  font-size: 10vh;
-  width: 17vw;
-}
-.menu-but {
-  font-family: consolas;
-  display: flex;
-  justify-content: center;
-  margin: 1vh;
-}
-a {
-  position: relative;
-  display: none;
-  color: #00ff00;
-  text-transform: uppercase;
-  letter-spacing: 0.3vw;
-  text-decoration: none;
-  overflow: hidden;
-  transition: 0.2s;
-}
-a:hover {
-  color: #000000;
-  background: #00ff00;
-  box-shadow: 0 0 10px #00ff00, 0 0 40px #00ff00, 0 0 80px #00ff00;
-  transition-delay: 1s;
-}
-a span {
-  position: absolute;
-  display: block;
-}
-a span:nth-child(1) {
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 0.3vw;
-  background: linear-gradient(90deg,transparent,#00ff00);
-} 
-a:hover span:nth-child(1) {
-  left: 100%;
-  transition: 1s;
-}
-a span:nth-child(3) {
-  bottom: 0;
-  right: -100%;
-  width: 100%;
-  height: 0.3vw;
-  background: linear-gradient(270deg,transparent,#00ff00);
-} 
-a:hover span:nth-child(3) {
-  right: 100%;
-  transition: 1s;
-  transition-delay: 0.5s;
-}
-a span:nth-child(2) {
-  top: -100%;
-  right: 0;
-  width: 0.3vw;
-  height: 100%;
-  background: linear-gradient(180deg,transparent,#00ff00);
-} 
-a:hover span:nth-child(2) {
-  top: 100%;
-  transition: 1s;
-  transition-delay: 0.25s;
-}
-a span:nth-child(4) {
-  bottom: -100%;
-  left: 0;
-  width: 0.3vw;
-  height: 100%;
-  background: linear-gradient(360deg,transparent,#00ff00);
-} 
-a:hover span:nth-child(4) {
-  bottom: 100%;
-  transition: 1s;
-  transition-delay: 0.75s;
-}
-/* Spike */
-#spike {
-    height: 12vh;
-    width: 12vw;
-    position: absolute;
-    bottom: 31vh;
-    left: 160vmin;
-    animation: none;
-    display: none;
-}
-@keyframes spikeMov {
-    0% {
-        left: 160vmin;
-    }
-    100% {
-        left: -30vmin;
-    }
-}
-/* Cube */
-#cube {
-    height: 12vh;
-    width: 12vw;
-    position: absolute;
-    bottom: 31vh;
-    left: 5vmin;
-    display: none;
-}
-.jump {
-    animation: jump 0.3s linear;
-}
-@keyframes jump {
-    0% {
-        bottom: 31vh;
-    }
-    10% {
-      bottom: 40vh;
-    }
-    20% {
-      bottom: 50vh;
-    }
-    30% {
-        bottom: 60vh;
-    }
-    40% {
-      bottom: 70vh;
-    }
-    50% {
-        bottom: 80vh;
-    }
-    60% {
-      bottom: 70vh;
-    }
-    70% {
-      bottom: 60vh;
-    }
-    80% {
-        bottom: 50vh;
-    }
-    90% {
-      bottom: 40vh;
-    }
-    100% {
-        bottom: 31vh;
-    }
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(180deg);
-    }
-}
-/* Score */
-#score {
-    height: auto;
-    width: auto;
-    color: gold;
-    font-size: 5vh;
-    font-family: monospace;
-    margin: 3vh;
-    display: none;
 
 }
-/* Counter */
-#count {
-  font-family: consolas;
-  font-size: 13vh;
-  color: #c20bc2;
-  display: none;
-  justify-content: center;
-  padding-top: 25vh;
+
+#root {
+  
+  position: absolute;
+  
+  width: 100%;
+  
+  height: 100%;
+  
+  overflow: hidden;
+
 }
+
+#root>div {
+  
+  position: absolute;
+  
+  background: radial-gradient(ellipse at center, rgba(177, 198, 219, 1) 2%, rgba(5, 63, 118, 1) 100%);
+  
+  border-radius: 100%;
+  
+  animation: shine infinite alternate;
+
+}
+
+@keyframes shine {
+  
+  0% {
+    
+    transform: scale(1);
+    
+    opacity: 1;
+  
+  }
+  
+  20% {
+    
+    transform: scale(.9);
+    
+    opacity: .8;
+  
+  }
+  
+  40% {
+    
+    transform: scale(1);
+    
+    opacity: .9;
+  
+  }
+  
+  40% {
+    
+    transform: scale(.2);
+    
+    opacity: .2;
+  
+  }
+  
+  60% {
+    
+    transform: scale(.2);
+    
+    opacity: .1;
+  
+  }
+  
+  80% {
+    
+    transform: scale(.5);
+    
+    opacity: .5;
+  
+  }
+  
+  100% {
+    
+    transform: scale(.9);
+    
+    opacity: .9;
+  
+  }
+
+}
+
+/* Moon Ground */
+
+#floor {
+    
+  height: 31vh;
+    
+  width: 100vw;
+    
+  position: absolute;
+  left: 0vw;
+    
+    
+  bottom: 0vh;
+    
+  background-image: url(img/3.jpg);
+    
+  display: none;
+
+}
+
+/* Name of the game */
+
+#name {
+  
+  display: flex;
+  
+  justify-content: center;
+  
+  color: gold;
+  
+  font-size: 15vh;
+  
+  font-weight: bold;
+  
+  font-family: Courier;
+
+}
+
+/* Buttons in menu */
+
+#play {
+  
+  display: flex;
+  
+  justify-content: center;
+  
+  font-size: 10vh;
+  
+}
+
+#sound {
+  
+  display: flex;
+  
+  justify-content: center;
+  
+  font-size: 10vh;
+  
+
+}
+
+#exit {
+  
+  display: flex;
+  
+  justify-content: center;
+  
+  font-size: 10vh;
+  
+
+}
+
+.menu-but {
+  
+  font-family: consolas;
+  
+  display: flex;
+  
+  justify-content: center;
+  
+  margin: 1vh;
+
+}
+
+a {
+  
+  position: relative;
+  
+  display: none;
+  
+  color: #00ff00;
+  
+  text-transform: uppercase;
+  
+  letter-spacing: 0.3vw;
+  
+  text-decoration: none;
+  
+  overflow: hidden;
+  
+  transition: 0.2s;
+
+}
+
+a:hover {
+  
+  color: #000000;
+  
+  background: #00ff00;
+  
+  box-shadow: 0 0 10px #00ff00, 0 0 40px #00ff00, 0 0 80px #00ff00;
+  
+  transition-delay: 1s;
+
+}
+
+a span {
+  
+  position: absolute;
+  
+  display: block;
+
+}
+
+a span:nth-child(1) {
+  
+  top: 0;
+  
+  left: -100%;
+  
+  width: 100%;
+  
+  height: 0.3vw;
+  
+  background: linear-gradient(90deg,transparent,#00ff00);
+
+} 
+
+a:hover span:nth-child(1) {
+  
+  left: 100%;
+  
+  transition: 1s;
+
+}
+
+a span:nth-child(3) {
+  
+  bottom: 0;
+  
+  right: -100%;
+  
+  width: 100%;
+  
+  height: 0.3vw;
+  
+  background: linear-gradient(270deg,transparent,#00ff00);
+
+} 
+
+a:hover span:nth-child(3) {
+  
+  right: 100%;
+  
+  transition: 1s;
+  
+  transition-delay: 0.5s;
+
+}
+
+a span:nth-child(2) {
+  
+  top: -100%;
+  
+  right: 0;
+  
+  width: 0.3vw;
+   
+  height: 100%;
+  
+  background: linear-gradient(180deg,transparent,#00ff00);
+
+} 
+
+a:hover span:nth-child(2) {
+  
+  top: 100%;
+  
+  transition: 1s;
+  
+  transition-delay: 0.25s;
+
+}
+
+a span:nth-child(4) {
+  
+bottom: -100%;
+  
+left: 0;
+  
+width: 0.3vw;
+  
+height: 100%;
+  
+background: linear-gradient(360deg,transparent,#00ff00);
+
+} 
+
+a:hover span:nth-child(4) {
+  
+  bottom: 100%;
+  
+  transition: 1s;
+  
+  transition-delay: 0.75s;
+
+}
+
+/* Spike */
+
+#spike {
+    
+  height: 12vh;
+    
+  width: 12vw;
+    
+  position: absolute;
+    
+  bottom: 31vh;
+    
+  left: 85vw;
+    
+  animation: none;
+    
+  display: none;
+
+}
+
+@keyframes spikeMov {
+    
+  0% {
+        
+    left: 85vw;
+    
+  }
+    
+  100% {
+
+    left: -10vw;
+    
+  } 
+
+}
+
+/* Cube */
+
+#cube {
+    
+  height: 12vh;
+    
+  width: 12vw;
+    
+  position: absolute;
+    
+  bottom: 31vh;
+    
+  left: 5vmin;
+    
+  display: none;
+
+}
+
+.jump {
+    
+  animation: jump 0.3s linear;
+
+}
+
+@keyframes jump {
+
+  0% {
+        
+    bottom: 31vh;
+    
+  }
+    
+  10% {
+      
+    bottom: 40vh;
+    
+  }
+    
+  20% {
+      
+    bottom: 50vh;
+    
+  }
+    
+  30% {
+        
+    bottom: 60vh;
+    
+  }
+    
+  40% {
+      
+    bottom: 70vh;
+    
+  }
+    
+  50% {
+        
+    bottom: 80vh;
+    
+  }
+    
+  60% {
+      
+    bottom: 70vh;
+    
+  }
+    
+  70% {
+      
+    bottom: 60vh;
+    
+  }
+    
+  80% {
+        
+    bottom: 50vh;
+    
+  }
+    
+  90% {
+      
+    bottom: 40vh;
+    
+  }
+    
+  100% {
+        
+    bottom: 31vh;
+    
+  }
+    
+  from {
+      
+    transform: rotate(0deg);
+    
+  }
+    
+  to {
+      
+    transform: rotate(180deg);
+    
+  }
+
+}
+
+/* Score */
+
+#score {
+    
+  height: auto;
+    
+  width: auto;
+    
+  color: gold;
+    
+  font-size: 5vh;
+    
+  font-family: monospace;
+    
+  margin: 3vh;
+    
+  display: none;
+
+
+}
+
+/* Counter */
+
+#count {
+  
+  font-family: consolas;
+  
+  font-size: 10vh;
+  
+  color: #c20bc2;
+  
+  display: none;
+  
+  justify-content: center;
+  
+  padding-top: 25vh;
+
+}
+
 /* Game Over */
+
 #gameOver {
-    display: none;
-    font-size: 10vh;
-    position: absolute;
-    left: 40vw;
-    top: 40vh;
-    width: 30vw;
-    height: 80px;
-    color: orangered;
-    font-family: fantasy; 
+    
+  display: none;
+    
+  font-size: 10vh;
+    
+  justify-content: center;
+
+  margin-top: 25vh;   
+    
+    
+  color: orangered;
+    
+  font-family: fantasy; 
+
+}
+
+#gameOverBut {
+  display: flex;
+  justify-content: center;
 }
 /* Retry */
+
+#retryDiv {
+  margin-right: 4vw;
+}
 #retry {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  position: absolute;
+  
+  
+  
   width: 12vh;
   height: 12vh;
-  top: 54vh;
-  left: 43vw;
+  
+  
+  
   cursor: pointer;
+  
   transition: transform 0.5s;
-  filter: invert(1);
-}
-#retry:hover {
-  transform: scale(1.2);
-}
-#home {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  position: absolute;
-  width: 12vh;
-  height: 12vh;
-  top: 53.5vh;
-  left: 54vw;
-  cursor: pointer;
-  transition: transform 0.5s;
+  
   filter: invert(1);
 
 }
-#home:hover {
+
+#retry:hover {
+  
   transform: scale(1.2);
+
 }
+
+#home {
+  
+  
+  
+  width: 12vh;
+  height: 12vh;
+  
+  
+  
+  cursor: pointer;
+  
+  transition: transform 0.5s;
+  
+  filter: invert(1);
+
+
+}
+
+#home:hover {
+  
+  transform: scale(1.2);
+
+}
+
 #homeDiv {
+  
   display: none;
+
 }
+
 #retryDiv {
+  
   display: none;
+
 }
+
+@media screen and (max-width: 768px) {
+  #name {
+    font-size: 11vh;
+  }
+  #play {
+    font-size: 10vh;
+  }
+  #sound {
+    font-size: 10vh;
+  }
+  #exit {
+    font-size: 10vh;
+  }
+  #menu {
+    margin-top: 15vh;
+  }
+  #score {
+    margin: -13vh 3vh 0vh 0vh;
+  }
+  #gameOver {
+    margin-top: 23vh;
+  }
+  #cube, #spike {
+    bottom: 30.5vh;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  #name {
+    font-size: 9vh;
+  }
+  #play {
+    font-size: 8vh;
+  }
+  #sound {
+    font-size: 8vh;
+  }
+  #exit {
+    font-size: 8vh;
+  }
+  #menu {
+    margin-top: 20vh;
+  }
+  #score {
+    margin: -18vh 3vh 0vh 0vh;
+  }
+  #gameOver {
+    font-size: 8vh;
+    margin-top: 20vh
+  }
+  #retry {
+    width: 10vh;
+    height: 10vh;
+  }
+  #home {
+    width: 10vh;
+    height: 10vh;
+  }
+  #count {
+  
+  
+  font-size: 8vh;
+  margin-top: -2vh;
+  }
+  #cube, #spike {
+    bottom: 29.5vh;
+  }   
+}
+
+@media screen and (max-width: 480px) {
+  #name {
+    font-size: 6vh;
+  }
+  #play {
+    font-size: 5vh;
+  }
+  #sound {
+    font-size: 5vh;
+  }
+  #exit {
+    font-size: 5vh;
+  }
+  #menu {
+    margin-top: 25vh;
+  }
+  #score {
+    margin: -23vh 3vh 0vh 0vh;
+    font-size: 4vh;
+  }
+  #gameOver {
+    font-size: 6vh;
+    margin-top: 16vh
+  }
+  #retry {
+    width: 9vh;
+    height: 9vh;
+  }
+  #home {
+    width: 9vh;
+    height: 9vh;
+  }
+  #count {
+  
+  
+  font-size: 6vh;
+  margin-top: -3vh;
+  }
+  #cube, #spike {
+    bottom: 28vh;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  #name {
+    font-size: 5vh;
+  }
+  #play {
+    font-size: 4vh;
+  }
+  #sound {
+    font-size: 4vh;
+  }
+  #exit {
+    font-size: 4vh;
+  }
+  #menu {
+    margin-top: 30vh;
+  }
+  #score {
+    margin: -28vh 3vh 0vh 0vh;
+    font-size: 3vh;
+  }
+  #gameOver {
+    font-size: 5vh;
+    margin-top: 11vh
+  }
+  #retry {
+    width: 8vh;
+    height: 8vh;
+  }
+  #home {
+    width: 8vh;
+    height: 8vh;
+  }
+  #count {
+  
+  
+  font-size: 5vh;
+  margin-top: -4vh;
+  }
+  #cube, #spike {
+    bottom: 27.5vh;
+  }
+}   

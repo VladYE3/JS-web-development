@@ -49,6 +49,9 @@ document.addEventListener('keydown', function(event) {
     jump();
   }
 });
+document.addEventListener('click', function(event) {
+    jump();
+});
 // Add Jump
 function jump() {
     if (cube.classList != 'jump') {

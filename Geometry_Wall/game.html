@@ -1,86 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cosmo Jump</title>
-    <link rel="stylesheet" href="game.css">
+<head> 
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cosmo Jump</title>
+  <link rel="stylesheet" href="game.css">
 </head>
-<body>
-    <!-- Space Background -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <div id="root"></div>
-    <!-- Menu -->
-    <div id="menu">
-        <!-- Name of the game -->
-        <div><h1 id="name">Cosmo Jump</h1></div>
-        <!-- Buttons in menu -->
-        <!-- Button Play -->
-        <div class="menu-but">
-            <a href="#" id="play" onclick='startCount()'>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                Play
-            </a>
-        </div>
-        <!-- Button Sound -->
-        <div class="menu-but">
-            <a href="#" id="sound" onclick='soundTurn()'>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                Sound:On
-            </a>
-        </div>
-        <!-- Button Exit -->
-        <div class="menu-but">
-            <a href="#" id="exit" onclick='exit()'>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                Exit
-            </a>
-        </div>
-    </div>
-    <!--Game -->
-    <div class="game">
-        <!-- Cube -->
-        <svg id="cube" viewbox="0 0 100 100">
-            <polyline points="0 0 100 0 100 100 0 100 0 0 20 20 20 80 80 80 80 20 20 20"
-            fill="#7FF70A"></polyline>
-            <polyline points="40 40 40 60 60 60 60 40 40 40" fill="#0FF6F8"></polyline>
-        </svg>
-        <!-- Spike -->
-        <svg id="spike" viewbox="0 0 50 50">
-            <linearGradient x2="0%" y1="0%" y2="100%" id="gradient">
-                <stop style="stop-color: #ff0000be;" offset="0%" />
-                <stop style="stop-color: black;" offset="100%" />
-            </linearGradient>
-            <polygon class="inner" points="0 50 25 0 50 50 0 50" fill="url(#gradient)"
-            stroke="white" stroke-width="1"/>
-        </svg>
-        <!-- Moon Ground -->
-        <div id="floor"></div>
-    <!-- Score -->
+<body>    
+<!-- Space Background --> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+  <div id="root"></div>    
+<!-- Menu -->   
+  <div id="menu">        
+  <!-- Name of the game -->       
+  <div><h1 id="name">Cosmo Jump</h1></div>        
+  <!-- Buttons in menu -->     
+    <!-- Button Play -->    
+      <div class="menu-but">        
+        <a href="#" id="play" onclick='startCount()'>
+          <span></span>               
+          <span></span>                
+          <span></span>               
+          <span></span>                
+          Play            
+        </a>        
+      </div>        
+    <!-- Button Sound -->        
+      <div class="menu-but">            
+        <a href="#" id="sound" onclick='soundTurn()'>               
+          <span></span>                
+          <span></span>               
+          <span></span>
+                
+          <span></span>
+                
+          Sound:On
+            
+        </a>
+        
+      </div>
+        
+    <!-- Button Exit -->
+        
+      <div class="menu-but">
+            
+        <a href="#" id="exit" onclick='exit()'>
+                
+          <span></span>
+                
+          <span></span>
+                
+          <span></span>
+                
+          <span></span>
+                
+          Exit
+            
+        </a>
+        
+      </div>
+    
+  </div>
+    
+<!--Game -->
+    
+  <div class="game">
+        
+  <!-- Cube -->
+        
+    <svg id="cube" viewbox="0 0 100 100">
+            
+      <polyline points="0 0 100 0 100 100 0 100 0 0 20 20 20 80 80 80 80 20 20 20"
+            
+      fill="#7FF70A"></polyline>
+            
+      <polyline points="40 40 40 60 60 60 60 40 40 40" fill="#0FF6F8"></polyline>
+        
+    </svg>
+        
+  <!-- Spike -->
+        
+    <svg id="spike" viewbox="0 0 50 50">
+            
+      <linearGradient x2="0%" y1="0%" y2="100%" id="gradient">
+                
+        <stop style="stop-color: #ff0000be;" offset="0%" />
+                
+        <stop style="stop-color: black;" offset="100%" />
+            
+      </linearGradient>
+            
+      <polygon class="inner" points="0 50 25 0 50 50 0 50" fill="url(#gradient)"
+            
+      stroke="white" stroke-width="1"/>
+        
+    </svg>
+        
+  <!-- Moon Ground -->
+        
+    <div id="floor"></div>
+    
+  <!-- Score -->
+    
     <div style="display: flex; justify-content: flex-end;"><div id="score">Score <b>0</b></div></div>
-    <!-- Counter -->
+    
+  <!-- Counter -->
+    
     <div id="count">Ready</div>
-    <!-- Game Over -->
-        <div id="gameOver">Game Over</div>
-    </div>
-    <!-- Retry -->
+    
+  <!-- Game Over -->
+        
+    <div id="gameOver">Game Over</div>
+    
+  </div>
+
+  <div id='gameOverBut'>    
+  <!-- Retry -->
+    
     <div id="retryDiv">
-        <img src="img/repeat.png" id="retry" onclick ='retryCount()'>
+        
+      <img src="img/repeat.png" id="retry" onclick ='retryCount()'>
+    
     </div>
-    <!-- Back to menu -->
+    
+  <!-- Back to menu -->
+    
     <div id="homeDiv">
-        <img src="img/home.svg" id="home" onclick ='backHome()'>
+        
+      <img src="img/home.svg" id="home" onclick ='backHome()'>
+    
     </div>
+  </div>
+    
     <script src='game.js'></script>
+
 </body>
+
 </html>

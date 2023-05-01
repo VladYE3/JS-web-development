@@ -43,8 +43,10 @@ for (let i = 0; i < params.amount; i++) {
   $("#root").append(star);
 }
 // Jump Button
-document.addEventListener('keydown', function(event) {  
-  if(event.code == 'Space'){    
+document.addEventListener('keydown', function(event) { 
+  if (event.repeat) {
+    event.preventDefault();
+  } else if (event.code == 'Space'){    
     jump();  
   }
 });

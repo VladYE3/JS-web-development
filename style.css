@@ -1,16 +1,16 @@
 body {
     background: rgba(50, 54, 57, 0.85);
-    font-family: Roboto, 'Segoe UI', Tahoma, sans-serif;
+    font-family: Open Sans, Helvetica Neue, Segoe UI, Ubuntu, sans-serif;
     margin: 0px;
 }
 .header {
-    color: red;
+    color: gold;
     text-align: center;
     font-size: 35px;
     opacity: 0.8;
 }
 h2 {
-    color: red;
+    color: gold;
     text-align: center;
     font-size: 30px;
     opacity: 0.8;

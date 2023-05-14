@@ -98,26 +98,26 @@ let startCount = () => {
       let cubeWidth = parseInt(window.getComputedStyle(cube).getPropertyValue('width'));      
       let spikeHeight = parseInt(window.getComputedStyle(spike).getPropertyValue('height'));      
       if(cubeBottom <= spikeBottom + spikeHeight/2 && spikeLeft + spikeWidth/2 >= cubeLeft - cubeWidth/2 && spikeLeft - spikeWidth/2 <= cubeLeft + cubeWidth/2) {
-        gameOver.style.display = 'flex';          
-        spike.style.animation = 'none';          
-        cube.style.display = 'none';          
-        spike.style.display = 'none';          
-        floor.style.display = 'none';          
-        retry.style.display = 'block';          
-        home.style.display = 'block';          
-        audio.pause();          
-        clearInterval(interval);          
-        playerScore = 0;      
+			gameOver.style.display = 'flex';          
+         spike.style.animation = 'none';          
+         cube.style.display = 'none';          
+         spike.style.display = 'none';          
+         floor.style.display = 'none';          
+         retry.style.display = 'block';          
+         home.style.display = 'block';          
+         audio.pause();          
+         clearInterval(interval);          
+         playerScore = 0;      
       }  
-    }, 10);  
-  }, 4000);
+      }, 10);  
+   }, 4000);
 } 
 // Sound
 const audio = new Audio();
 audio.src = 'mp3/music.mp3';
 audio.volume = 0.3;
 let soundTurn = () => {  
-  if(buttonSound.textContent == "Sound:On") {    
+	if(buttonSound.textContent == "Sound:On") {    
     buttonSound.textContent = "Sound:Off";    
     audio.src = 'none';  
   } else {      

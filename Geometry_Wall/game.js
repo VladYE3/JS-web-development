@@ -117,29 +117,11 @@ const audio = new Audio();
 audio.src = 'mp3/music.mp3';
 audio.volume = 0.3;
 let soundTurn = () => {  
-	if(buttonSound.innerHTML == "               
-          <span></span>                
-          <span></span>               
-          <span></span>     
-          <span></span>               
-          Sound:On            
-        ") {    
-    buttonSound.innerHTML = "               
-          <span></span>                
-          <span></span>               
-          <span></span>     
-          <span></span>               
-          Sound:Off            
-        ";    
+	if (buttonSound.innerHTML == "<span></span><span></span><span></span><span></span>Sound:On") {    
+    buttonSound.innerHTML = "<span></span><span></span><span></span><span></span>Sound:Off";    
     audio.src = 'none';  
   } else {      
-      buttonSound.innerHTML = "               
-          <span></span>                
-          <span></span>               
-          <span></span>     
-          <span></span>               
-          Sound:On            
-        ";      
+      buttonSound.innerHTML = "<span></span><span></span><span></span><span></span>Sound:On";      
       audio.src = 'mp3/music.mp3'; 
   }
 }

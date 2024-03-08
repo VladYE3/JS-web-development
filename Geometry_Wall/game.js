@@ -8,7 +8,6 @@ const count = document.querySelector('#count');
 const score = document.querySelector('#score');
 const gameOver = document.querySelector('#gameOver');
 const buttonSound = document.querySelector('#sound');
-const soundText = document.querySelector('#soundText');
 const retry = document.querySelector('#retryDiv');
 const home = document.querySelector('#homeDiv');
 let interval = null;
@@ -118,11 +117,29 @@ const audio = new Audio();
 audio.src = 'mp3/music.mp3';
 audio.volume = 0.3;
 let soundTurn = () => {  
-	if(soundText.textContent == "Sound:On") {    
-    soundText.textContent = "Sound:Off";    
+	if(buttonSound.innerHTML == "               
+          <span></span>                
+          <span></span>               
+          <span></span>     
+          <span></span>               
+          Sound:On            
+        ") {    
+    buttonSound.innerHTML = "               
+          <span></span>                
+          <span></span>               
+          <span></span>     
+          <span></span>               
+          Sound:Off            
+        ";    
     audio.src = 'none';  
   } else {      
-      soundText.textContent = "Sound:On";      
+      buttonSound.innerHTML = "               
+          <span></span>                
+          <span></span>               
+          <span></span>     
+          <span></span>               
+          Sound:On            
+        ";      
       audio.src = 'mp3/music.mp3'; 
   }
 }

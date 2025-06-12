@@ -125,6 +125,21 @@ let soundTurn = () => {
       audio.src = 'mp3/music.mp3'; 
   }
 }
+
+// Alert
+function showAlert(message) {
+   document.getElementById('alertMessage').textContent = message;
+   document.getElementById('customAlert').style.visibility = 'visible';
+   document.getElementById('customAlert').style.opacity = '1';
+}
+
+function closeAlert() {
+   document.getElementById('customAlert').style.opacity = '0';
+   setTimeout(() => {
+      document.getElementById('customAlert').style.visibility = 'hidden';
+   }, 300);
+}
+
 // Exit
 let exit = () => {
    const wasClosed = false;

@@ -126,7 +126,19 @@ let soundTurn = () => {
   }
 }
 // Exit
-let exit = () => window.close();
+let exit = () => {
+   const wasClosed = false;
+   try {
+      window.close();
+      wasClosed = true;
+   } catch (error) {
+      wasClosed = false;
+   }
+
+   if (!wasClosed) {
+      alert('Чтобы закрыть вкладку, используйте Ctrl+W или кнопку в браузере.');
+   }
+};
 // Retry   
 let retryCount = () => {  
   cube.style.display = 'block';  

@@ -435,4 +435,78 @@ a:hover span:nth-child(4) {
   #cube, #spike {
     bottom: 27.5vh;
   }
-}   
+}
+
+/* Alert */
+#customAlert {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.5); 
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   z-index: 1000;
+   visibility: hidden;
+   opacity: 0;
+   transition: opacity 0.3s ease-in-out;
+}
+
+.alertBox {
+   background: linear-gradient(
+      45deg,
+      #060d20,
+      #1a2a6c
+   ); 
+   padding: 25px;
+   border-radius: 12px;
+   text-align: center;
+   box-shadow: 0px 0px 15px rgba(0, 255, 0, 0.5); 
+   color: white;
+   opacity: 1; 
+}
+
+@keyframes pulse {
+   from {
+      box-shadow: 0 0 5px rgba(138, 43, 226, 0.4);
+   }
+   to {
+      box-shadow: 0 0 15px rgba(138, 43, 226, 0.8);
+   }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap');
+
+.alertBox p {
+   font-family: 'Orbitron', sans-serif; 
+   font-size: 22px;
+   font-weight: bold;
+   color: #00ff00; 
+   text-shadow: 0px 0px 10px rgba(0, 255, 0, 0.8); 
+   letter-spacing: 1.5px;
+}
+
+.alertBox button {
+   background: linear-gradient(
+      45deg,
+      #ffd700,
+      #ffa500
+   ); 
+   color: black; 
+   font-family: 'Orbitron', sans-serif; 
+   font-size: 18px;
+   font-weight: bold;
+   padding: 10px 20px;
+   border: none;
+   border-radius: 6px;
+   cursor: pointer;
+   box-shadow: 0px 4px 8px rgba(255, 215, 0, 0.5); 
+   transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.alertBox button:hover {
+   transform: scale(1.07); 
+   box-shadow: 0px 4px 12px rgba(255, 215, 0, 0.8); 
+}

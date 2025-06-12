@@ -142,17 +142,15 @@ function closeAlert() {
 
 // Exit
 let exit = () => {
-   try {
-      window.close();
-      console.log('Попытка закрытия окна...');
-   } catch (error) {
-      console.error('Ошибка закрытия:', error);
-   }
+   window.close();
 
    setTimeout(() => {
-      showAlert('Чтобы закрыть вкладку, используйте Ctrl+W');
+      showAlert(
+         'Если Вам не удалось покинуть космическое пространство, нажмите Ctrl+W;)'
+      );
    }, 100);
 };
+
 
 // Retry   
 let retryCount = () => {  

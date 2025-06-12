@@ -142,18 +142,18 @@ function closeAlert() {
 
 // Exit
 let exit = () => {
-   const wasClosed = false;
    try {
       window.close();
-      wasClosed = true;
+      console.log('Попытка закрытия окна...');
    } catch (error) {
-      wasClosed = false;
+      console.error('Ошибка закрытия:', error);
    }
 
-   if (!wasClosed) {
-      alert('Чтобы закрыть вкладку, используйте Ctrl+W или кнопку в браузере.');
-   }
+   setTimeout(() => {
+      showAlert('Чтобы закрыть вкладку, используйте Ctrl+W');
+   }, 100);
 };
+
 // Retry   
 let retryCount = () => {  
   cube.style.display = 'block';  

@@ -50,7 +50,7 @@ document.addEventListener('keydown', function(event) {
     jump();  
   }
 });
-document.addEventListener('click', function(event) {
+document.addEventListener('mousedown', function(event) {
     jump();
 });
 // Add Jump
